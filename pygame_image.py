@@ -20,17 +20,20 @@ def main():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
+        a=0
+        b=0
         Key_lst=pg.key.get_pressed()
         if Key_lst[pg.K_UP]:
-             kk_rct.move_ip(0,-1)
+            a-=1
         if Key_lst[pg.K_DOWN]:
-             kk_rct.move_ip(0,+1)
+            a+=1
         if Key_lst[pg.K_LEFT]:
-             kk_rct.move_ip(-1,0)
+            b-=1
         if Key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip(0,0)
+            b+=1
         else:
-            kk_rct.move_ip(-1,0)
+            b-=1
+        kk_rct.move_ip(b,a)
         x=tmr%3200
         screen.blit(bg_img, [-x, 0]) #一枚目
         screen.blit(bg_img2, [-x+1600, 0]) #二枚目
