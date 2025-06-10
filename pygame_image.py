@@ -17,9 +17,10 @@ def main():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-
-        screen.blit(bg_img, [-tmr, 0]) #一枚目
-        screen.blit(bg_img2, [-tmr+1600, 0]) #二枚目
+            x=tmr%3200
+        screen.blit(bg_img, [-x, 0]) #一枚目
+        screen.blit(bg_img2, [-x+1600, 0]) #二枚目
+        screen.blit(bg_img, [-x+3200, 0]) #三枚目
         screen.blit(kouka, [300, 200])
         pg.display.update()
         tmr += 1        
