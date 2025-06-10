@@ -12,13 +12,14 @@ def main():
     bg_img = pg.image.load("fig/pg_bg.jpg") #Surface
     kouka=pg.image.load("fig/3.png")
     kouka=pg.transform.flip(kouka, True ,False)
+    bg_img2=pg.transform.flip(bg_img, True ,False)
     tmr = 0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
         screen.blit(bg_img, [-tmr, 0]) #一枚目
-        screen.blit(bg_img, [-tmr+1600, 0]) #二枚目
+        screen.blit(bg_img2, [-tmr+1600, 0]) #二枚目
         screen.blit(kouka, [300, 200])
         pg.display.update()
         tmr += 1        
