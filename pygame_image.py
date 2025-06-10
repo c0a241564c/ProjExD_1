@@ -17,11 +17,12 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img, [-tmr, 0])
+        screen.blit(bg_img, [-tmr, 0]) #一枚目
+        screen.blit(bg_img, [-tmr+1600, 0]) #二枚目
         screen.blit(kouka, [300, 200])
         pg.display.update()
         tmr += 1        
-        clock.tick(200)
+        clock.tick(200) #FPS
 
 
 if __name__ == "__main__":
